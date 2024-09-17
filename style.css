@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 15px;
     --color-afterglow: rgb(255, 68, 0);
     --color-goblingreen: rgb(66, 218, 124);
 }
@@ -110,7 +110,7 @@ a:hover {
 .call-to-action {
     padding-bottom: 0;
     font-size: larger;
-    font-weight: 600;
+    font-weight:300;
 }
 
 h2 {

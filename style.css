@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 16px;
+    --color-afterglow: rgb(255, 68, 0);
+    --color-goblingreen: rgb(66, 218, 124);
 }
 
 @font-face {
@@ -12,6 +14,12 @@
     font-weight: normal;
     font-style: normal;
 
+}
+
+@media screen and (max-width: 400px) {
+    :root {
+        font-size: 15px;
+    }
 }
 
 * {
@@ -24,6 +32,14 @@ body {
     height: 100vh;
     background-color: black;
     color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 0.12rem;
+    word-spacing: 0.3rem;
+    font-weight: 100;
+}
+
+em {
+    text-decoration: underline;
 }
 
 h1 {
@@ -47,9 +63,9 @@ aside {
     display: flex;
     flex-direction: column;
     background-color: red;
-    background: no-repeat url(./assets/thomas-le-KNQEvvCGoew-unsplash.jpg) center/100vh;
+    background: no-repeat url(./assets/thomas-le-KNQEvvCGoew-unsplash.jpg) center/200vh;
     width: clamp(10%, 40%, 600px);
-    height: 100%;
+    height: 100vh;
 }
 
 .banner {
@@ -65,7 +81,12 @@ nav {
 main {
     background-color: black;
     width: 60%;
-    height: 100%;
+    height: 100vh;
+}
+
+main > div {
+padding: 30px;
+margin: 50px 0px 50px 0px;
 }
 
 a:link {
@@ -74,9 +95,90 @@ a:link {
 }
 
 a:visited {
-    color: rgb(66, 218, 124);
+    color: var(--color-goblingreen);
 }
 
 a:hover {
-    filter: drop-shadow(0px 0px 5px rgb(255, 68, 0));
+    filter: drop-shadow(0px 0px 5px var(--color-afterglow));
+}
+
+.form-section {
+    box-shadow: 0 4px 2px -2px rgb(255, 255, 255);
+    padding-bottom: 10px
+}
+
+.call-to-action {
+    padding-bottom: 0;
+    font-size: larger;
+    font-weight: 600;
+}
+
+h2 {
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    text-align: left;
+}
+
+.form-section li {
+    width: 50%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+input {
+    width: max(180px, 50%);
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(39, 39, 39);
+    color: white;
+}
+
+input:focus {
+    appearance: none;
+    box-shadow: inset 0px -2px 3px 2px var(--color-goblingreen);
+    border: none;
+    outline: 2px outset var(--color-goblingreen);
+}
+
+input:invalid {
+    border: 1px solid rgb(255, 0, 0, 0.3);
+    background-color: black;
+    color: white;
+}
+
+button {
+    background-color: var(--color-goblingreen);
+    padding: 10px 40px 10px 40px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+input:valid + span::before {
+    position: absolute;
+    content: '✅';
+    width: 1rem;
+    height: 1rem;
+    top: 0px;
+    right: 15%;
+}
+
+.call-to-action p {
+    width: min(50ch, 80%);
+}
+
+.submit-section {
+    margin-top: 0;
+    padding-top: 0;
 }

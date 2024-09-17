@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up-Form</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Change autocomplete styles in WebKit */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+          border: 1px solid #434346;
+          -webkit-text-fill-color: #F1F1F1;
+          -webkit-box-shadow: 0 0 0px 1000px #1B1B1C inset;
+          transition: background-color 5000s ease-in-out 0s;
+        };
+        </style>
 </head>
 
 <body>
@@ -18,40 +35,54 @@
         <nav><a href="https://unsplash.com/@thomasble?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Photo by Thomas Le</a> on <a href="https://unsplash.com/photos/high-rise-buildings-at-night-time-KNQEvvCGoew?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></nav>
     </aside>
     <main>
-        <div class="call-to-action">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum enim eos maxime nulla architecto rem suscipit sapiente possimus. Dolor laborum pariatur odit rerum. In cupiditate, natus perspiciatis alias praesentium eligendi.</div>
+        <div class="call-to-action">
+            <p>
+                This is not a real online service! You know you need
+                something like this in your life to help you realize
+                your deepest dreams.<br>
+                Sign up <em>now</em> to get started.
+            </p>
+            <p>You <em>know</em> you want to.</p>
+        </div>
         <div class="form-section">
             <h2>Let's do this!</h2>
-            <form action="" method="get">
+            <form action="" method="get" id="signup">
                 <ul>
                     <li>
                         <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first_name">
+                        <input type="text" id="first-name" name="first_name" required pattern="\w{1, }">
+                        <span></span>
                     </li>
                     <li>
                         <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last_name">
+                        <input type="text" id="last-name" name="last_name" required>
+                        <span></span>
                     </li>
                     <li>
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
+                        <span></span>
                     </li>
                     <li>
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" required pattern="\d{10}">
+                        <span></span>
                     </li>
                     <li>
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" required>
+                        <span></span>
                     </li>
                     <li>
                         <label for="confirm-password">Confirm Password</label>
-                        <input type="password" id="confirm-password" name="confirm_password">
-                    </li>
-                    <li>
-                        <button type="submit">Create Accont</button>
+                        <input type="password" id="confirm-password" name="confirm_password" required>
+                        <span></span>
                     </li>
                 </ul>
-            </form>
+            </form>        
+        </div>
+        <div class="submit-section">
+            <button form="signup" type="submit">Create Accont</button>
             <p>Already have an account? <a href="https:www.wadelevelsup.com">Log in</a></p>
         </div>
     </main> 
